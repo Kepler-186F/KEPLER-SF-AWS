@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://yoursite.com/blog/2015/11/08/review%20earphone%20equipment/</loc>
+    <lastmod>2015-11-08T22:42:22-06:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/2015/11/07/micro%20service%20template/</loc>
+    <lastmod>2015-11-07T10:24:22-06:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/2015/06/22/Where%20did%20preformance%20go/</loc>
+    <lastmod>2015-06-22T15:31:14-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/2015/06/20/DFS%20BFS/</loc>
+    <lastmod>2015-06-20T15:31:14-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/2013/01/15/hello-world/</loc>
+    <lastmod>2013-01-15T14:19:22-06:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/2011/05/27/SpringVsRails/</loc>
+    <lastmod>2011-05-27T04:00:04-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/blog/archives/</loc>
+  </url>
+  <url>
+    <loc>http://yoursite.com/</loc>
+  </url>
+  <url>
+    <loc>http://yoursite.com/super-awesome/</loc>
+  </url>
+</urlset>

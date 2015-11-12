@@ -1,0 +1,60 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+header[role="banner"] {
+     height:116px;
+     background-image: url(/images/bridge.jpg);
+     background-repeat: no-repeat;
+}
+
+
+html {
+  background: #000000;
+}
+
+
+
+/* ----- header ----- */
+
+
+body > header{
+	background: none;
+	padding: 1.6em 0 1em 0
+}
+
+body > header h1{
+	font-size: 2.8em;
+	padding-left: 20px;
+	text-shadow: rgba(0, 0, 0, 1.0) 0 0 8px;
+  font-style: bold;
+}
+
+body > header h2{
+	font-size: 0.8em;
+	letter-spacing: 1px;
+	margin-top: -0.4em;
+	padding-left: 50px;
+}
+
+body > nav {
+	padding-top: .15em;
+	padding-bottom: .15em;
+}
+
+body > nav a{
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+body > nav form .search{
+	padding: .2em .3em;
+}
+
+
+
+
+body > footer{
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius:0;
+	margin-bottom: 0;
+}

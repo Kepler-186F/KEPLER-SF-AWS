@@ -1,0 +1,51 @@
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Autocomplete - Default functionality</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+</head>
+<body>
+
+<div class="ui-widget">
+	<label for="tag">Tags: </label>
+	<input id="tags">
+</div>
+
+
+</body>
+
+<script>
+function updateSuggestion(keyword){
+	var xmlHttp = null;
+	xmlHttp = new XMLHttpRequest();
+	///http://responsor.yinicsoft.com/getGoogleSuggestion/ethan
+	var url = 'http://99.14.140.249:124/getGoogleSuggestion/'+keyword;
+	//var url = 'http://localhost:7000/getGoogleSuggestion/'+keyword;
+	console.log(url);
+	xmlHttp.open("GET", url, false);
+	xmlHttp.send(null);
+	//console.log(xmlHttp.responseText);
+	var res = xmlHttp.responseText.split(',');
+	console.log($( "#tags" ));
+	$( "#tags" ).autocomplete({
+		source: res
+	});
+};
+
+
+
+document.onkeyup = function() {
+///var keyword = $("#tags").value;
+var keyword =document.getElementById("tags").value;
+console.log(keyword);
+if(keyword){
+	updateSuggestion(keyword);
+}
+}
+
+
+
+</script>

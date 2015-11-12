@@ -1,0 +1,81 @@
+---
+layout: post
+title: "Standard DFS and BFS"
+date: 2015-06-20 15:31:14 -0500
+comments: true
+categories:
+---
+
+
+given a graph below
+
+```
+#!/usr/bin/python
+
+graph={}
+
+graph['A']=['B','D']
+graph['B']=['A','E','C']
+graph['C']=['B']
+graph['D']=['A','E']
+graph['E']=['B','D']
+```
+
+
+To traverse this simple graph, usually people go on and on talking about DFS and BFS, and there are many versions of algorithm book 101 talk about the way of implementing it. Today I got asked again by a colleague, and after search around online surprisingly I found there is a no good example anywhere that set a standard for beginners to start. Therefore I coded one for him. And it was pretty tricky since there are some caveat need be take into consideration. I decided to post that here so that it can benefit other people who might need it.
+
+
+
+
+
+
+Start with this DFS. I call it classic-DFS
+This gives the good DFS: It Ends when All NODE ARE VISITED
+```
+def DFS(node):
+	print node,visited
+	for next in graph[node]:
+		if next not in visited:
+			visited.append(next)
+			DFS(next)
+			print 'returnning'
+visited=['A']
+DFS('A')
+```
+
+This one is difference than the one above, it gives all possible path DFS: it ends when ALL PATH ARE SEARCHED.
+It also very good for circle detecting. I call it standard DFS or S-DFS
+```
+def SDFS(node):
+	print node,stack
+	for next in graph[node]:
+		if next not in stack:
+			stack.append(next)
+			SDFS(next)
+			stack.pop()
+			print 'returnning'
+#		elif next in stack and next <> stack[-2]:
+#			print 'circle!'
+
+stack=['A']
+SDFS('A')
+```
+
+Now this one is a BFS one. it is very straight forward.
+```
+def BFS(node):
+	global Q
+	print node,Q
+	for next in graph[node]:
+		if next not in visted:
+			Q.append(next)
+			visited.append(next)
+	Q=Q[1:]
+	while len(Q)>0:
+		next=Q[0]
+		BFS(next)
+
+Q=['A']
+visited=['A']
+#BFS('A')
+```

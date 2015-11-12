@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Ethan Hyper-dimension Search Engine (EHSE)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="./dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+  </head>
+
+
+
+
+  <body role="document">
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PH66M7"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PH66M7');</script>
+  <!-- End Google Tag Manager -->
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+              <a class="navbar-brand" href="#"><b>Kepler Elastic Hyper-Dimension Search Engine (EHSE)</b> BETA</a>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <a href="index.html" class="btn btn-primary" role="button">TURN OFF EHSE</a>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Bootstrap core JavaScript
+    XXXXXXXXXXXXXXXXXXXXXXX
+
+    <input type="text" id="text_main" class="form-control">
+
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+ <div class="inner cover">
+    <center>
+    <font style="font-family: 'Heiti SC';font-size: 400%">ETHAN GO!</font>
+    <div class="row">
+    <div class="col-lg-4"></div>
+     <div id="holder" class="col-lg-4">
+      <input id="text_main" class=" form-control typeahead tt-query" autocomplete="off">
+     </div>
+    <div class="col-lg-4"></div>
+    </div>
+    <br />
+    <p align="middle"><a href="#" class="btn btn-primary btn-lg" role="button" id="href_EHSH">EHSE Search</a>  <!-- javascript:void(0) -->
+    <a href="http://google.com" class="btn btn-primary btn-lg" role="button" id="href_google">Google Search</a>
+    </p>
+    </center>
+ </div>
+
+
+
+<script>
+
+    function updateSuggestion(keyword){
+         var xmlHttp = null;
+         xmlHttp = new XMLHttpRequest();
+         ///http://responsor.yinicsoft.com/getGoogleSuggestion/ethan
+         var url = 'http://99.14.140.249:124/getGoogleSuggestion/'+keyword;
+         //console.log(url);
+         xmlHttp.open("GET", url, false);
+         xmlHttp.send(null);
+         var res = xmlHttp.responseText.split(',');
+
+         //console.log(res);
+         //console.log($("#text_main"));
+         $("#text_main").autocomplete({
+             source: res
+         });
+     };
+
+
+    window.onload = function() {
+      document.getElementById("text_main").focus();
+    };
+
+
+    document.getElementById("text_main").onkeyup = function(){
+       ///var keyword = $("#tags").value;
+       ///$('#text_main')
+       var keyword =document.getElementById("text_main").value;
+       //console.log('1'+document.getElementById("text_main").value);
+       //console.log('2'+$("#text_main")[0].value);
+
+       //console.log($("#text_main")[0]);
+       if(keyword){
+          updateSuggestion(keyword);
+       }
+       //console.log(document.getElementById("text_main").value);
+       document.getElementById("href_EHSH").href="https://duckduckgo.com/?q="+document.getElementById("text_main").value;
+       document.getElementById("href_google").href="https://www.google.com/search?client=safari&rls=en&q="+document.getElementById("text_main").value+"&ie=UTF-8&oe=UTF-8";
+    };
+
+
+    //////This binds enter key
+    document.onkeydown = function () {
+      if (window.event.keyCode == '13') {
+        document.getElementById('href_google').click();
+        ///document.getElementById("priceOptionForm").action="https://duckduckgo.com/?q="+document.getElementById("text_main").value;
+        ///"https://www.google.com/search?client=safari&rls=en&q="+document.getElementById("text_main").value+"&ie=UTF-8&oe=UTF-8";
+      }
+    }
+
+
+</script>
+    <!-- Bootstrap core JavaScript
+    <script src="./dist/js/bootstrap-switch.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
+    <script src="./assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
